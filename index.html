@@ -80,6 +80,7 @@ function drawGame() {
   drawApple();
   drawSnake();
   drawNyawa()
+  drawspeed()
 
   drawScore();
 
@@ -145,6 +146,11 @@ function isGameOver() {
   return gameOver;
 }
 
+function drawspeed() {
+  ctx.fillStyle = "white";
+  ctx.font = "10px Verdana";
+  ctx.fillText("speed = " + speed, canvas.width - 230, 10);
+}
 function drawScore() {
   ctx.fillStyle = "white";
   ctx.font = "10px Verdana";
