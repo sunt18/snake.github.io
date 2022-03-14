@@ -67,11 +67,8 @@ function drawGame() {
 
   changeSnakePosition();
   let result = isGameOver();
-  let start = drawSnake()
-  let start2 = drawApple()
   if (result) {
-    nyawa--;
-    return start;
+    return;
   }
 
   clearScreen();
@@ -93,9 +90,7 @@ function drawGame() {
 
   setTimeout(drawGame, 1000 / speed);
 }
-function getStarted(){
 
-}
 function isGameOver() {
   let gameOver = false;
 
@@ -123,26 +118,9 @@ function isGameOver() {
   }
 
   if (gameOver) {
-    ctx.fillStyle = "white";
-    ctx.font = "50px Verdana";
-
-    if (gameOver) {
-      ctx.fillStyle = "white";
-      ctx.font = "50px Verdana";
-
-      var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-      gradient.addColorStop("0", " magenta");
-      gradient.addColorStop("0.5", "blue");
-      gradient.addColorStop("1.0", "red");
-      // Fill with gradient
-      ctx.fillStyle = gradient;
-
-      ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
-    }
-
-    ctx.fillText("Game Over!", canvas.width / 6.5, canvas.height / 2);
+    location.reload();
+    
   }
-
   return gameOver;
 }
 
